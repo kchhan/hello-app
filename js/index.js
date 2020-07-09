@@ -1,36 +1,54 @@
 const App = (() => {
-  const loadEventListeners = () => {
+  const renderLogin = () => {
+    const mainContainer = document.querySelector('#main-container');
+    mainContainer.innerHTML = '';
+    const login = LoginForm.createLogin();
+    mainContainer.appendChild(login);
+
     document.querySelector('#submit').addEventListener('click', submitForm);
   };
 
-  const loadLogin = () => {
-    const login = LoginForm.createLogin();
+  const renderHomePage = (user) => {
     const mainContainer = document.querySelector('#main-container');
-    mainContainer.appendChild(login);
+    mainContainer.innerHTML = '';
+    const home = Home.createHome(user);
+    mainContainer.appendChild(home);
+
+    document.querySelector('#logout-button').addEventListener('click', signOut);
   };
 
   const submitForm = () => {
     const userInput = document.querySelector('#user-input');
-    const passwordInput = doucment.querySelector('#password-input');
+    const passwordInput = document.querySelector('#password-input');
     const user = userInput.value;
+    const password = passwordInput.value;
 
-    if (userInput.length !== 0 && passwordInput.length !== 0) {
-      renderHomePage(user); // user used to greet on homepage
+    const checkUser = () => {
+      const regex = /^[a-zA-Z0-9]+([a-zA-Z0-9](_|-| )[a-zA-Z0-9])*[a-zA-Z0-9]+$/;
+      return regex.test(user);
+    };
+
+    const checkPassword = () => {
+      const regex = /^[a-zA-Z0-9]+([a-zA-Z0-9](_|-| )[a-zA-Z0-9])*[a-zA-Z0-9]+$/;
+      return regex.test(password);
+    };
+
+    if (checkUser() && checkPassword()) {
+      renderHomePage();
+      Logic.updateHello(user); // user used to greet on homepage
+      Logic.updateHeader();
+      Logic.updateWeather();
     }
+  };
+
+  const signOut = () => {
+    renderLogin();
   };
 
   return {
     init() {
-      loadLogin();
-      loadEventListeners();
+      renderLogin();
     },
   };
 })();
 App.init();
-
-// const address = new Address();
-
-// address
-//   .getAddress()
-//   .then((results) => console.log(results))
-//   .catch((err) => console.log(err));

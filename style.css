@@ -61,3 +61,41 @@ input {
 #submit:hover {
   color: var(--title);
 }
+
+/* Home page styling */
+#home {
+  text-align: center;
+}
+
+#home-title {
+  font-size: 3rem;
+}
+
+/* Utility in home page */
+#logout-button {
+  width: 90%;
+  font-size: 1rem;
+  margin-bottom: 10px;
+}
+
+#logout-button:hover {
+  color: var(--title);
+}
+
+/* Weather container styling */
+#weather-container {
+  border: 1px solid var(--outline);
+  text-align: center;
+  padding: 20px 30px;
+  margin: 15px auto;
+}
+
+#w-icon {
+  border-radius: 50%;
+  background-color: #ddd
+}
+
+/* Footer */
+a {
+  text-decoration: none;
+}

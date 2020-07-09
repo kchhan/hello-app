@@ -14,14 +14,14 @@ const LoginForm = (() => {
     // Welcome title
     const title = document.createElement('h2');
     title.id = 'login-title';
-    title.textContent = 'Welcome Back! :)';
+    title.textContent = 'Welcome! :)';
 
     // Username field
     const userDiv = document.createElement('div');
     const userLabel = document.createElement('label');
     userLabel.innerHTML = '<i class="fas fa-user-friends"></i> Username';
     const userInput = document.createElement('input');
-    userInput.id = "user-input"
+    userInput.id = 'user-input';
     userInput.required = true;
     userInput.placeholder = 'Enter your username';
     userDiv.appendChild(userLabel);
@@ -30,7 +30,7 @@ const LoginForm = (() => {
     // Password field
     const passwordDiv = document.createElement('div');
     const passwordLabel = document.createElement('label');
-    passwordLabel.innerHTML = '<i class="fas fa-kay"></i> Password';
+    passwordLabel.innerHTML = '<i class="fas fa-key"></i> Password';
     const passwordInput = document.createElement('input');
     passwordInput.id = 'password-input';
     passwordInput.required = true;
@@ -74,10 +74,10 @@ const LoginForm = (() => {
     section.appendChild(img);
 
     return section;
-  }
+  };
 
   return {
-    createLogin
+    createLogin,
   };
 })();
 

@@ -1,11 +1,11 @@
 class Hello {
-  contructor(language) {
-    this.language = language;
+  constructor(ipAddress) {
+    this.ipAddress = ipAddress;
   }
 
-  async getHello(ipAddress) {
+  async getHello() {
     const response = await fetch(
-      `https://fourtonfish.com/hellosalut/?ip=${ipAddress}`, {mode: 'cors'}
+      `https://fourtonfish.com/hellosalut/?ip=${this.ipAddress}`, {mode: 'cors'}
     )
 
     const responseData = response.json();
@@ -14,7 +14,7 @@ class Hello {
 
     // ResponseData will return an object in this form
     // {
-    //   code: "ca" (for country)
+    //   code: "ca" (for state or country)
     //   hello: "Hello" (specific language hello)
     // }
   }

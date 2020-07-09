@@ -1,8 +1,4 @@
 class Address {
-  constructor(address) {
-    this.address = address;
-  }
-
   async getAddress() {
     const response = await fetch(
       `http://ip-api.com/json/?fields=status,message,country,countryCode,region,regionName,city,zip,lat,lon,timezone,isp,org,as,query`,
@@ -13,6 +9,7 @@ class Address {
 
     return responseData;
 
-    // Response data will return a wide variety of information
+    // Response data will return:
+    // country, country code, region, regionName, city, zip, lat, lon, timezone, isp, org, as, query(ipAddress)
   }
 }
