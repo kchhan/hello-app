@@ -58,7 +58,7 @@ const LoginForm = (() => {
   const createImg = () => {
     const img = document.createElement('img');
     img.id = 'globe';
-    img.src = '../img/globe.jpg';
+    img.src = './img/globe.jpg';
     img.alt = 'a globe';
 
     return img;
