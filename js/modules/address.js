@@ -1,7 +1,7 @@
 class Address {
   async getAddress() {
     const response = await fetch(
-      `http://ip-api.com/json/?fields=status,message,country,countryCode,region,regionName,city,zip,lat,lon,timezone,isp,org,as,query`,
+      `https://ip-api.com/json/?fields=status,message,country,countryCode,region,regionName,city,zip,lat,lon,timezone,isp,org,as,query`,
       { mode: 'cors' }
     );
 
